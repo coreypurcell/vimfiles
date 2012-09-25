@@ -98,3 +98,15 @@ if has("statusline") && !&cp
 endif
 
 let g:CommandTMaxHeight=10
+
+" Sane Ignore For ctrlp
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\vendor$\|\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$',
+  \ 'file': '\.exe$\|\.so$\|\.dat$'
+  \ }
+
+" Set ctrl p command to use Most Recently Used Files
+let g:ctrlp_cmd = 'CtrlPMixed'
+
+" Set ctrl p to use the faster git listing commands
+let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files']
